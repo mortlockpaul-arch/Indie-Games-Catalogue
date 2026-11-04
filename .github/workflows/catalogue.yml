@@ -1,0 +1,51 @@
+name: Catalogue
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths: ['entries/**', 'tools/**', '.github/workflows/catalogue.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: candidate
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          path: validator
+          persist-credentials: false
+      - name: Validate candidate metadata using trusted validator
+        run: python3 validator/tools/catalogue.py candidate --check
+  publish:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: publish-catalogue
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Build approved catalogue
+        run: python3 tools/catalogue.py .
+      - name: Publish catalogue
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin catalogue
+          git worktree add published FETCH_HEAD
+          cp catalogue.json published/catalogue.json
+          git -C published add catalogue.json
+          if ! git -C published diff --cached --quiet; then
+            git -C published commit -m 'Publish approved catalogue'
+            git -C published push origin HEAD:catalogue
+          fi
