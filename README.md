@@ -19,7 +19,9 @@ Only submit material you have permission to distribute. A catalogue entry is met
 
 ## For the owner
 
-Review requests at https://github.com/mortlockpaul-arch/Indie-Games-Catalogue/pulls. Check the submitter, package description, sizes, hash and whether a seeder is available. Reject unsuitable entries by closing their request. Approve suitable contributions and merge their request. The publish workflow regenerates `catalogue.json`; Build Manager refreshes when opened, on request and every five minutes while the catalogue window is visible.
+Review requests at https://github.com/mortlockpaul-arch/Indie-Games-Catalogue/pulls. Check the submitter, package description, sizes, hash and whether a seeder is available. Reject unsuitable entries by closing their request. Approve suitable contributions and merge their request. The publish workflow regenerates `catalogue.json` on the `catalogue` branch; Build Manager refreshes when opened, on request and every five minutes while the catalogue window is visible. The initial catalogue is empty until entries are approved.
+
+The `main` branch requires a passing validation check and a code-owner review for normal contributors. The owner retains GitHub's administrator override so they can maintain the service and merge their own submissions after checking them. There is no automatic merge. The generated `catalogue` branch is written by GitHub Actions after changes reach `main`.
 
 Submissions add one file per torrent under `entries/<infohash>.json`, using the version 1 Build Manager catalogue format with exactly one project. Do not edit generated `catalogue.json` by hand. Entries can be removed or corrected through reviewed changes; apps retain their own downloaded files and active transfers.
 
