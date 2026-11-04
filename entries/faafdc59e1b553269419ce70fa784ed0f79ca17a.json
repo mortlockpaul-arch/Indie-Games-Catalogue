@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Projects": [
+    {
+      "PackageKind": "Source",
+      "Id": "5a353f06fc4147c0b0233a0be78ef66c",
+      "Name": "Synthetic approval test",
+      "FolderName": "Example",
+      "PackageName": "5a353f06fc4147c0b0233a0be78ef66c.zip",
+      "PackageBytes": 22,
+      "UnpackedBytes": 4,
+      "FileCount": 1,
+      "Sha256": "45B4019D799B99EE58A921A6CE20CE1AEBB1B3B6466B0DF8B275B25AD1E95092",
+      "ContentSha256": "",
+      "InfoHash": "FAAFDC59E1B553269419CE70FA784ED0F79CA17A",
+      "TorrentBase64": "ZDEwOmNyZWF0ZWQgYnkxNzpNb25vVG9ycmVudCAzLjAuMjEzOmNyZWF0aW9uIGRhdGVpMTc5MzgzMjY3NmU4OmVuY29kaW5nNTpVVEYtODQ6aW5mb2Q2Omxlbmd0aGkyMmU0Om5hbWUzNjo1YTM1M2YwNmZjNDE0N2MwYjAyMzNhMGJlNzhlZjY2Yy56aXAxMjpwaWVjZSBsZW5ndGhpMzI3NjhlNjpwaWVjZXMyMDrgTE7hX2fW3l2eO1hc0MPxNDLHG2Vl",
+      "IconBase64": "",
+      "CreatedUtc": "2026-11-04T22:51:16.4574025+00:00",
+      "SizeDisplay": "0.0 MB",
+      "SnapshotDisplay": "FAAFDC59E1",
+      "CreatedDisplay": "04 Nov 22:51"
+    }
+  ]
+}
