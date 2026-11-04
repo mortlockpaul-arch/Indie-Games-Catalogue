@@ -63,10 +63,10 @@ def bdecode(data):
 
 
 def segment(value):
-    require(isinstance(value, str) and value and len(value) <= 180, 'Invalid folder name')
+    require(isinstance(value, str) and value and len(value) <= 200, 'Invalid folder name')
     require(not value.startswith('.') and not value.endswith((' ', '.')), 'Invalid folder name')
     require(not any(ord(c) < 32 or c in '<>:"/\\|?*' for c in value), 'Unsafe folder name')
-    require(value.split('.')[0].upper() not in {'CON', 'PRN', 'AUX', 'NUL', *('COM' + str(i) for i in range(1, 10)), *('LPT' + str(i) for i in range(1, 10))}, 'Reserved folder name')
+    require(value.split('.')[0].upper() not in {'CON', 'PRN', 'AUX', 'NUL', *('COM' + str(i) for i in range(10)), *('LPT' + str(i) for i in range(10))}, 'Reserved folder name')
 
 
 def validate(project):
@@ -78,7 +78,8 @@ def validate(project):
     require(re.fullmatch('[0-9a-fA-F]{32}', project.get('Id', '')), 'Invalid ID')
     name = project.get('Name')
     require(isinstance(name, str) and name.strip() and len(name) <= 200, 'Invalid name')
-    if project.get('CreatedUtc'):
+    if 'CreatedUtc' in project:
+        require(isinstance(project['CreatedUtc'], str), 'Invalid creation timestamp')
         datetime.fromisoformat(project['CreatedUtc'].replace('Z', '+00:00'))
     segment(project.get('FolderName'))
     require(project.get('PackageName') == project['Id'] + '.zip', 'Invalid package name')

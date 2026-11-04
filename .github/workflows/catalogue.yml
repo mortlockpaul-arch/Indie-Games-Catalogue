@@ -21,7 +21,9 @@ jobs:
           path: validator
           persist-credentials: false
       - name: Validate candidate metadata using trusted validator
-        run: python3 validator/tools/catalogue.py candidate --check
+        run: |
+          python3 validator/tools/test_catalogue.py
+          python3 validator/tools/catalogue.py candidate --check
   publish:
     if: github.event_name != 'pull_request'
     needs: validate
