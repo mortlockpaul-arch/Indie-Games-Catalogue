@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Projects": [
+    {
+      "PackageKind": "Source",
+      "Id": "c36bfbc3ac7f46f99610213b26e791b8",
+      "Name": "$1 Zombie Game, The (World) (XBLIG)",
+      "FolderName": "$1 Zombie Game, The (World) (XBLIG)",
+      "PackageName": "c36bfbc3ac7f46f99610213b26e791b8.zip",
+      "PackageBytes": 123764,
+      "UnpackedBytes": 317000,
+      "FileCount": 53,
+      "Sha256": "F1CCA7D81F7F49591764ED2801723FAFB05C6210181348289A337DA0FA7E111E",
+      "ContentSha256": "",
+      "InfoHash": "AFC9AED0A3FD50AE7CEBF607F34CF90D9C15A36D",
+      "TorrentBase64": "ZDc6Y29tbWVudDQyOkluZGllIEdhbWVzIEJ1aWxkIE1hbmFnZXIgcHJvamVjdCBzbmFwc2hvdDEwOmNyZWF0ZWQgYnkxNzpNb25vVG9ycmVudCAzLjAuMjEzOmNyZWF0aW9uIGRhdGVpMTc5MzcxODEzNWU4OmVuY29kaW5nNTpVVEYtODQ6aW5mb2Q2Omxlbmd0aGkxMjM3NjRlNDpuYW1lMzY6YzM2YmZiYzNhYzdmNDZmOTk2MTAyMTNiMjZlNzkxYjguemlwMTI6cGllY2UgbGVuZ3RoaTMyNzY4ZTY6cGllY2VzODA6TeCnrJYCm3BwFHXFujEbqfzFFUKypAqtrYX0m\u002B8AIs9tsy94rsJ2ucxTIWrydYl0fDXmHs\u002BNxXbJg0FpfTvAYwbLUhTmSuinGI7uVS9ZqNhlZQ==",
+      "IconBase64": "",
+      "CreatedUtc": "2026-11-03T15:02:16.0634276+00:00",
+      "SizeDisplay": "0.1 MB",
+      "SnapshotDisplay": "AFC9AED0A3",
+      "CreatedDisplay": "03 Nov 15:02"
+    }
+  ]
+}
