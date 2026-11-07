@@ -3,6 +3,22 @@
   "Projects": [
     {
       "PackageKind": "Source",
+      "Id": "df585e3c5089400496fc284b2cf222f7",
+      "Name": "Jet Set Willy 360 (World) (XBLIG)",
+      "FolderName": "Jet Set Willy 360 (World) (XBLIG)",
+      "PackageName": "df585e3c5089400496fc284b2cf222f7.zip",
+      "PackageBytes": 1580857,
+      "UnpackedBytes": 1744867,
+      "FileCount": 72,
+      "Sha256": "001BB28729D485D48CBCD7D1A8F4A52936B210CB873A907F69E97C76D6612A47",
+      "ContentSha256": "",
+      "InfoHash": "1732077E99E951EB117B08A702F4D0E5BED4342C",
+      "TorrentBase64": "ZDc6Y29tbWVudDQyOkluZGllIEdhbWVzIEJ1aWxkIE1hbmFnZXIgcHJvamVjdCBzbmFwc2hvdDEwOmNyZWF0ZWQgYnkxNzpNb25vVG9ycmVudCAzLjAuMjEzOmNyZWF0aW9uIGRhdGVpMTc5MzY1NDg3N2U4OmVuY29kaW5nNTpVVEYtODQ6aW5mb2Q2Omxlbmd0aGkxNTgwODU3ZTQ6bmFtZTM2OmRmNTg1ZTNjNTA4OTQwMDQ5NmZjMjg0YjJjZjIyMmY3LnppcDEyOnBpZWNlIGxlbmd0aGkzMjc2OGU2OnBpZWNlczk4MDrJqXFySN9otWSpeL571+obhMRVmpthQn86U4m4kRnTOd1vpjXfThr8TZFRi+VjneVgvlxGqjYdk4VhOc2gZuUknh+e7neIUYRP8kmNum0m6lDCkxA/X130ZwJKZwwjh36gK8ycr9rua3qpYD44Wl0XPojHzwacmHJ83sdKaE/MVVeKNVNGxJhx4cwF56hfJxXhjolEuocPdnv04n34WKiA2JapHufgWXUzhbGffgF3eMbAgcNWhenpi7LSI4UcfOV4PVUXaySmGJxhXIEi4F7Tjx655Nz8Gq42Ron76DHyjCSIUE+ziJq6qGmyLHNFLw7VB1fjkjXU9KmpGgd+8fKy9U2d/PXz6291kKAa5xtaIdZqK5hcXFrHfAVulyQuHLPZEFl7ZGwiwsV6om2uBVq+uaDEfOVqCssskyNeVGffOp0FG8pN3JNvFt3Plj/fi1h7cADlfUo2w32XgqDZvC/z6C5zk9jtXgt+5ufeHOHbWjdgssiAMZxfGAKkXFggWH0s9pYQKi7MVEc5QG5SnPmEGbr+qhO7NZ0C0l/clPV7ytFU60M7rojbXdTbPSxxaib7T/1fm8UQzgKg+ZdIEg7M+3v+Pi9SMbb48O7J5yYM+ydE+gQRvWP9kma9bC8+kQXMG9IAXeyNm04UUtGKNp5ZnmwaDlpS6GAdpSgjA66IInlifUVsdCt/EeFrOoZavQUgdWGBCV4rOJaeJOhUQhTqDWJfGkI1gN82gXBZubMG7Hrbe/TJlOOTZ4wEvTKsnMZ6x3FKKVRaaa5l2rgWQxeY58eQwb9bPElkS0u0NWOZJLxWVSp7oyxPACL7PXcEfdKuI3Xp5sakcGm7JhUkwVlHwcgRmSBy2JLgJVrHHFUuC5/9o/+z2/z1MqeCCgkGLIfGksML4VFTCnNlqgqnWcWGOruEFKMlEwlIxK8cWvMkvwCA9yPsSgO5DN9VS0mx9jcmJwa565qPlOgEZDJTNCpWboZxOJ6/HKOxISzmkvxc5wx2WFF84oDqey4Ne1RlwFYP1zt0lbS8/wfyX9Ce5s3KRo6lWc4cWYat5+AsdjI+5xMy9/YlfbMjDAlam6ZaJ258p/WRGsorFGO9OVNgZyiDcciyawrHeGPNaFWtcnhDchLWmL7rhl4ZhS9N6LvZ7zue56RyMfl+Sfq+1gV/qEMUuW4N39Y3C075AIHPS3mox6qcmoyHHMiOUCmk2CEip92QptbX80S7RWi0q9Pu1eG43d8fzYFkza6TnvY1XnqwNg5K19wc4tgYwhMTuxnF9daTMBsO4mfbNTFXTzMyVx/EMBCaXmVl",
+      "IconBase64": "",
+      "CreatedUtc": "2026-11-02T21:27:57.3255574+00:00"
+    },
+    {
+      "PackageKind": "Source",
       "Id": "af2a536353bd4a58a506af2ff80a493d",
       "Name": "Head Shot Z (World) (XBLIG)",
       "FolderName": "Head Shot Z (World) (XBLIG)",
