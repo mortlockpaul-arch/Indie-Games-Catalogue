@@ -20,6 +20,17 @@ class CatalogueTests(unittest.TestCase):
     def test_valid_metadata(self):
         self.assertEqual(validate(example())['Name'], 'Synthetic test')
 
+    def test_versions_and_legacy_entries(self):
+        self.assertNotIn('PackageVersion', validate(example()))
+        for version in ('', '1.0.1', '2.0.0-beta.1'):
+            project = example(); project.update(PackageVersion=version, VersionDisplay=version)
+            result = validate(project)
+            self.assertEqual(result['PackageVersion'], version)
+            self.assertNotIn('VersionDisplay', result)
+        for version in (None, 42, 'v' * 129, '1.0\nforged', '1.0\x7f'):
+            project = example(); project['PackageVersion'] = version
+            with self.assertRaises(ValueError): validate(project)
+
     def test_infohash(self):
         project = example(); project['InfoHash'] = '0' * 40
         with self.assertRaises(ValueError): validate(project)
@@ -41,9 +52,9 @@ class CatalogueTests(unittest.TestCase):
     def test_build_and_entry_filename(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory); (root / 'entries').mkdir()
-            project = example(); path = root / 'entries' / (project['InfoHash'] + '.json')
+            project = example(); project['PackageVersion'] = '1.0.1'; path = root / 'entries' / (project['InfoHash'] + '.json')
             path.write_text(json.dumps(dict(Version=1, Projects=[project])), encoding='utf-8')
-            self.assertEqual(len(json.loads(build(root))['Projects']), 1)
+            self.assertEqual(json.loads(build(root))['Projects'][0]['PackageVersion'], '1.0.1')
             path.rename(root / 'entries' / 'wrong.json')
             with self.assertRaises(ValueError): build(root)
 
