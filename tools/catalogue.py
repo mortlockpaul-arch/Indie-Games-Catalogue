@@ -72,8 +72,10 @@ def segment(value):
 def validate(project):
     require(isinstance(project, dict), 'Invalid project')
     # Do not forward unknown fields that might expose machine-specific paths.
-    allowed = {'PackageKind', 'Id', 'Name', 'FolderName', 'PackageName', 'PackageBytes', 'UnpackedBytes', 'FileCount', 'Sha256', 'ContentSha256', 'InfoHash', 'TorrentBase64', 'IconBase64', 'CreatedUtc', 'SizeDisplay', 'SnapshotDisplay', 'CreatedDisplay'}
+    allowed = {'PackageVersion', 'VersionDisplay', 'PackageKind', 'Id', 'Name', 'FolderName', 'PackageName', 'PackageBytes', 'UnpackedBytes', 'FileCount', 'Sha256', 'ContentSha256', 'InfoHash', 'TorrentBase64', 'IconBase64', 'CreatedUtc', 'SizeDisplay', 'SnapshotDisplay', 'CreatedDisplay'}
     require(set(project) <= allowed, 'Unknown project fields')
+    version = project.get('PackageVersion', '')
+    require(isinstance(version, str) and len(version) <= 128 and not any(ord(c) < 32 or 127 <= ord(c) <= 159 for c in version), 'Invalid package version')
     require(project.get('PackageKind') in ('Source', 'Game'), 'Invalid package type')
     require(re.fullmatch('[0-9a-fA-F]{32}', project.get('Id', '')), 'Invalid ID')
     name = project.get('Name')
@@ -106,7 +108,7 @@ def validate(project):
     piece_length, pieces = info.get(b'piece length'), info.get(b'pieces')
     require(type(piece_length) is int and 0 < piece_length <= 64 * 1024 * 1024, 'Invalid piece length')
     require(isinstance(pieces, bytes) and len(pieces) == 20 * ((project['PackageBytes'] + piece_length - 1) // piece_length), 'Invalid piece hashes')
-    return {key: value for key, value in project.items() if key not in {'SizeDisplay', 'SnapshotDisplay', 'CreatedDisplay'}}
+    return {key: value for key, value in project.items() if key not in {'VersionDisplay', 'SizeDisplay', 'SnapshotDisplay', 'CreatedDisplay'}}
 
 
 def build(root):
